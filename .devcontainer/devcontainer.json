@@ -1,0 +1,8 @@
+{
+	"name": "Existing Dockerfile",
+	"context": "..",
+	"dockerFile": "../Dockerfile",
+	"settings": {},
+	"extensions": [],
+	"postCreateCommand": "",
+}
