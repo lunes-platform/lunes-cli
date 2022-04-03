@@ -1,7 +1,9 @@
 # Lunes CLI
 
-[![Build](https://github.com/lunes-platform/lunes-cli/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/lunes-platform/lunes-cli/actions/workflows/build.yml)
+[![Build](https://github.com/lunes-platform/lunes-cli/actions/workflows/build.yml/badge.svg)](https://github.com/lunes-platform/lunes-cli/actions/workflows/build.yml)
 [![Test](https://github.com/lunes-platform/lunes-cli/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/lunes-platform/lunes-cli/actions/workflows/test.yml)
+[![Release](https://img.shields.io/github/v/release/lunes-platform/lunes-cli)](https://github.com/lunes-platform/lunes-cli/releases)
+
 
 - CLI Manager for Lunes Full-Node in Rust
 
