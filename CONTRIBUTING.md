@@ -9,9 +9,7 @@
 
 ---
 
-## Convention of Commits and Semantic Version
-
-### **Commit Structure**
+## Commit Structure
 
 ```
 type(escope): short description
@@ -22,12 +20,14 @@ why was it modified?
 #issue
 ```
 
+## Convention of Commits
+
 - **fix** Fix a bug
 - **add** Add a new feature
 - **remove** Remove a peace of code
 - **update** Update any thing. e.g. feature, piece, refact
 
-### **Semantic Version**
+## Semantic Version
 
 - **add** -> _Major_
 - **update** -> _Minor_
