@@ -3,6 +3,15 @@
 	"context": "..",
 	"dockerFile": "../Dockerfile",
 	"settings": {},
-	"extensions": [],
+	"extensions": [
+		"dustypomerleau.rust-syntax",
+		"matklad.rust-analyzer",
+		"bungcip.better-toml",
+		"mhutchie.git-graph",
+		"serayuzgur.crates",
+		"Tyriar.sort-lines",
+		"eamodio.gitlens",
+		"rust-lang.rust"
+	],
 	"postCreateCommand": "",
 }
