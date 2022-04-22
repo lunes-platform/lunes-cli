@@ -1,3 +1,7 @@
+use clap::StructOpt;
+use lunes::Lunes;
+
 fn main() {
-    println!("Hello, Lunes!");
+    let x = Lunes::parse();
+    dbg!(x);
 }
