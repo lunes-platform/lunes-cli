@@ -1,11 +1,25 @@
+use clap::{Args, Subcommand};
+
 /// Commands to management your Lunes Node
-#[derive(clap::Args, Debug)]
-#[clap(author, version, about, long_about = None)]
-pub struct Commands {
-    install: Option<String>,
-    up: Option<String>,
-    down: Option<String>,
-    logs: Option<String>,
-    status: Option<String>,
-    config: Option<String>,
+#[derive(Debug, Args)]
+#[clap(args_conflicts_with_subcommands = true)]
+pub struct Node {
+    #[clap(subcommand)]
+    pub command: Option<NodeCommands>,
+}
+
+#[derive(Debug, Subcommand)]
+pub enum NodeCommands {
+    Version,
+    Status,
+    Up,
+    Down,
+    Logs,
+    Install(NodeInstall),
+}
+
+#[derive(Debug, Args)]
+pub struct NodeInstall {
+    #[clap(short, long)]
+    pub version: Option<String>,
 }
