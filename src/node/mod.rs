@@ -10,12 +10,20 @@ pub struct Node {
 
 #[derive(Debug, Subcommand)]
 pub enum NodeCommands {
-    Version,
-    Status,
-    Up,
-    Down,
-    Logs,
+    /// Install Lunes Node by version
     Install(NodeInstall),
+    /// Version of your Lunes Node
+    Version,
+    /// Edit config of your Lunes Node
+    Config,
+    /// Status of your Lunes Node
+    Status,
+    /// Shutdown your Lunes Node
+    Down,
+    /// Follow your Lunes Node logs
+    Logs,
+    /// Turn On your Lunes Node
+    Up,
 }
 
 #[derive(Debug, Args)]
