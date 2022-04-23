@@ -47,8 +47,4 @@ lunes
         [name]
         list
 
-    tx
-        transfer
-        issue [--NFT]
-        sponsor
 ```

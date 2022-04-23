@@ -1,7 +1,5 @@
-use clap::{Command, StructOpt, Subcommand};
-use lunes_cli::node::NodeCommands;
-use lunes_cli::wallet::{Wallet, WalletCommands};
-use lunes_cli::{Cli, Commands};
+use clap::StructOpt;
+use lunes_cli::{node::NodeCommands, wallet::WalletCommands, Cli, Commands};
 
 fn main() {
     let args = Cli::parse();
@@ -9,6 +7,7 @@ fn main() {
     match args.command {
         Commands::Node(subcommand) => match subcommand.command.unwrap_or(NodeCommands::Version) {
             NodeCommands::Version => println!("version: 1.1.1"),
+            NodeCommands::Config => println!("pass your config"),
             NodeCommands::Status => println!("status: ON"),
             NodeCommands::Up => println!("up lunes node"),
             NodeCommands::Down => println!("down lunes node"),
@@ -20,9 +19,10 @@ fn main() {
         },
         Commands::Wallet(subcommand) => match subcommand.command.unwrap_or(WalletCommands::List) {
             WalletCommands::List => println!("w1, w2, w3"),
-            WalletCommands::Add => println!("new wallet add"),
             WalletCommands::Del => println!("wallet del"),
-            WalletCommands::New(_) => println!("unavaliable"),
+            WalletCommands::Rename(arg) => println!("Rename {:?}", arg),
+            WalletCommands::Add(arg) => println!("new wallet add {:?}", arg),
+            WalletCommands::New(arg) => println!("unavaliable {:?}", arg),
         },
         Commands::External(args) => {
             println!("{:?} Not a valid command", &args[0]);
