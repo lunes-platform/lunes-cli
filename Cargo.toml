@@ -4,6 +4,7 @@ version = "0.3.0"
 edition = "2021"
 homepage = "https://github.com/lunes-platform/lunes-cli"
 authors = ["Lucas Oliveira <olivmath@protonmail.com>"]
+license-file = "LICENSE"
 
 [dependencies]
 clap = { version = "3.1.12", features = ["derive"] }
