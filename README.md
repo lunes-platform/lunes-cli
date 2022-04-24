@@ -20,7 +20,7 @@ mv lunes-x86_64-linux-musl /usr/bin/lunes
 _Allow its execution_
 
 ```
-chmod +x /usr/bin/taker
+chmod +x /usr/bin/lunes
 ```
 
 ## Windows
