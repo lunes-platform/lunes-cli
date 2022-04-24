@@ -1,5 +1,5 @@
 use clap::StructOpt;
-use lunes_cli::{
+use lunes::{
     node::exec::{config, down, install, logs, status, up, version},
     node::NodeCommands,
     wallet::WalletCommands,
