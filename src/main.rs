@@ -1,21 +1,25 @@
 use clap::StructOpt;
-use lunes_cli::{node::NodeCommands, wallet::WalletCommands, Cli, Commands};
+use lunes_cli::{
+    node::exec::{config, down, install, logs, status, up, version},
+    node::NodeCommands,
+    wallet::WalletCommands,
+    Cli, Commands,
+};
 
 fn main() {
+    use human_panic::setup_panic;
+    setup_panic!();
     let args = Cli::parse();
 
     match args.command {
         Commands::Node(subcommand) => match subcommand.command.unwrap_or(NodeCommands::Version) {
-            NodeCommands::Version => println!("version: 1.1.1"),
-            NodeCommands::Config => println!("pass your config"),
-            NodeCommands::Status => println!("status: ON"),
-            NodeCommands::Up => println!("up lunes node"),
-            NodeCommands::Down => println!("down lunes node"),
-            NodeCommands::Logs => println!("Show logs of lunes node"),
-            NodeCommands::Install(arg) => match arg.version {
-                Some(v) => println!("Installing your lunes node version: {}", v),
-                None => println!("Installing your lunes node version: latest"),
-            },
+            NodeCommands::Install(arg) => install(arg.version),
+            NodeCommands::Version => version(),
+            NodeCommands::Config => config(),
+            NodeCommands::Status => status(),
+            NodeCommands::Down => down(),
+            NodeCommands::Logs => logs(),
+            NodeCommands::Up => up(),
         },
         Commands::Wallet(subcommand) => match subcommand.command.unwrap_or(WalletCommands::List) {
             WalletCommands::List => println!("w1, w2, w3"),

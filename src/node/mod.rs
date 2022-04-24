@@ -1,3 +1,4 @@
+pub mod exec;
 use clap::{Args, Subcommand};
 
 /// Commands to management your Lunes Node

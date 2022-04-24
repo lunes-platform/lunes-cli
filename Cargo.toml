@@ -1,7 +1,10 @@
 [package]
 name = "lunes-cli"
-version = "0.1.0"
+version = "0.3.0"
 edition = "2021"
+homepage = "https://github.com/lunes-platform/lunes-cli"
+authors = ["Lucas Oliveira <olivmath@protonmail.com>"]
 
 [dependencies]
 clap = { version = "3.1.12", features = ["derive"] }
+human-panic = "1.0.3"

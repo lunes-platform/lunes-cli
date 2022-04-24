@@ -4,7 +4,7 @@ use clap::{Args, Subcommand};
 #[clap(args_conflicts_with_subcommands = true)]
 pub struct Wallet {
     #[clap(subcommand)]
-    pub command: Option<WalletCommands>
+    pub command: Option<WalletCommands>,
 }
 
 #[derive(Debug, Subcommand)]
