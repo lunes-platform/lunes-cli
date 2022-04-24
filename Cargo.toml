@@ -1,5 +1,6 @@
 [package]
 name = "lunes-cli"
+description = "CLI Manager for Lunes Full-Node write in Rust"
 version = "0.3.0"
 edition = "2021"
 homepage = "https://github.com/lunes-platform/lunes-cli"

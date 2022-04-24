@@ -4,7 +4,7 @@
 [![Test](https://github.com/lunes-platform/lunes-cli/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/lunes-platform/lunes-cli/actions/workflows/test.yml)
 [![Release](https://img.shields.io/github/v/release/lunes-platform/lunes-cli)](https://github.com/lunes-platform/lunes-cli/releases)
 
-- CLI Manager for Lunes Full-Node in Rust
+- CLI Manager for Lunes Full-Node write in Rust
 
 ## How to Install
 
