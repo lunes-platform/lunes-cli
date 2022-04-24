@@ -12,10 +12,9 @@
 
 _Download the `lunes-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)_
 
-_Move to /bin/ and rename to `lunes`_
-
+*Move to /usr/bin/ and rename to `lunes`*
 ```
-mv lunes-linux /usr/bin/lunes
+mv lunes-x86_64-linux-musl /usr/bin/lunes
 ```
 
 _Allow its execution_
