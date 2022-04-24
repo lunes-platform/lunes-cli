@@ -8,15 +8,26 @@
 
 ## How to Install
 
-### Linux
+## Linux
 
-1. download the `lunes-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)
-2. `mv lunes-linux /usr/bin/lunes`
-3. `chmod +x /usr/bin/taker`
+*Download the `lunes-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)*
 
-### Windows
+*Move to /bin/ and rename to `lunes`*
+```
+mv lunes-linux /usr/bin/lunes
+```
 
-1. download the `lunes-windows.exe` [here](https://github.com/lunes-platform/lunes-cli/releases)
+*Allow its execution*
+```
+chmod +x /usr/bin/taker
+```
+
+## Windows
+
+```
+Comming Soon
+```
+<!-- 1. download the `lunes-windows.exe` [here](https://github.com/lunes-platform/lunes-cli/releases)
 2. `rename lunes-windowns.exe lunes.exe`
 3. move `lunes.exe` to `C:\Windows\lunes.exe`
 4. open start menu:
@@ -24,7 +35,7 @@
    - click in **environment variables** > **system variables** > **new**
    - **variable name:** `lunes`
    - **variable value:** `C:\Windows\lunes.exe`
-5. **restart the command prompt**
+5. **restart the command prompt** -->
 
 ## How to Use
 
