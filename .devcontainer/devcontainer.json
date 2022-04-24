@@ -1,7 +1,7 @@
 {
 	"name": "Existing Dockerfile",
 	"context": "..",
-	"dockerFile": "../Dockerfile",
+	"dockerFile": "./Dockerfile",
 	"settings": {},
 	"extensions": [
 		"dustypomerleau.rust-syntax",
