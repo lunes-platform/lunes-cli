@@ -10,20 +10,20 @@
 
 ### Linux
 
-1. download the `tasker-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)
-2. `mv tasker-linux /usr/bin/tasker`
+1. download the `lunes-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)
+2. `mv lunes-linux /usr/bin/lunes`
 3. `chmod +x /usr/bin/taker`
 
 ### Windows
 
-1. download the `tasker-windows.exe` [here](https://github.com/lunes-platform/lunes-cli/releases)
-2. `rename tasker-windowns.exe tasker.exe`
-3. move `tasker.exe` to `C:\Windows\tasker.exe`
+1. download the `lunes-windows.exe` [here](https://github.com/lunes-platform/lunes-cli/releases)
+2. `rename lunes-windowns.exe lunes.exe`
+3. move `lunes.exe` to `C:\Windows\lunes.exe`
 4. open start menu:
    - search for **edit environment variables** and open
    - click in **environment variables** > **system variables** > **new**
-   - **variable name:** `tasker`
-   - **variable value:** `C:\Windows\tasker.exe`
+   - **variable name:** `lunes`
+   - **variable value:** `C:\Windows\lunes.exe`
 5. **restart the command prompt**
 
 ## How to Use
@@ -46,5 +46,4 @@ lunes
         remove [name]
         [name]
         list
-
 ```
