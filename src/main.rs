@@ -1,6 +1,6 @@
 use clap::StructOpt;
 use lunes::{
-    node::exec::{config, down, install, logs, status, up, version},
+    node::exec::{config, down, install, logs, status, up, version, restart},
     node::NodeCommands,
     wallet::WalletCommands,
     Cli, Commands,
@@ -15,6 +15,7 @@ fn main() {
         Commands::Node(subcommand) => match subcommand.command.unwrap_or(NodeCommands::Version) {
             NodeCommands::Install(arg) => install(arg.version),
             NodeCommands::Version => version(),
+            NodeCommands::Restart => restart(),
             NodeCommands::Config => config(),
             NodeCommands::Status => status(),
             NodeCommands::Down => down(),

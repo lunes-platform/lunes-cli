@@ -64,3 +64,16 @@ pub fn install(version: Option<String>) {
         None => println!("Installing your lunes node version: latest"),
     }
 }
+
+pub fn restart() {
+    println!("Restart Lunes Node");
+
+    match Command::new("systemclt")
+        .arg("restart")
+        .arg("lunesnode.service")
+        .status()
+    {
+        Err(e) => panic!("Error restarting Lunes Node, {:?}", e),
+        Ok(x) => x,
+    };
+}

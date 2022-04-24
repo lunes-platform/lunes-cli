@@ -17,6 +17,8 @@ pub enum NodeCommands {
     Version,
     /// Edit config of your Lunes Node
     Config,
+    /// Restart your your Lunes Node
+    Restart,
     /// Status of your Lunes Node
     Status,
     /// Shutdown your Lunes Node
