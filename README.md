@@ -10,14 +10,16 @@
 
 ## Linux
 
-*Download the `lunes-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)*
+_Download the `lunes-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)_
 
-*Move to /bin/ and rename to `lunes`*
+_Move to /bin/ and rename to `lunes`_
+
 ```
 mv lunes-linux /usr/bin/lunes
 ```
 
-*Allow its execution*
+_Allow its execution_
+
 ```
 chmod +x /usr/bin/taker
 ```
@@ -27,6 +29,7 @@ chmod +x /usr/bin/taker
 ```
 Comming Soon
 ```
+
 <!-- 1. download the `lunes-windows.exe` [here](https://github.com/lunes-platform/lunes-cli/releases)
 2. `rename lunes-windowns.exe lunes.exe`
 3. move `lunes.exe` to `C:\Windows\lunes.exe`
@@ -39,22 +42,44 @@ Comming Soon
 
 ## How to Use
 
+## Basic Commands
+
 ```
 lunes
+Lunes CLI management for full-node and wallet
 
-    node
-        config [KEY_1=VALUE_1] [KEY_2=VALUE_2] [...]
-        install [--version=0.0.1]
-        status
-        logs
-        down
-        up
+USAGE:
+    lunes <SUBCOMMAND>
 
-    wallet
-        new
-        add [name=seed] [-p [name=private_key]]
-        rename [old_name=new_name]
-        remove [name]
-        [name]
-        list
+OPTIONS:
+    -h, --help    Print help information
+
+SUBCOMMANDS:
+    help    Print this message or the help of the given subcommand(s)
+    node    Commands to management your Lunes Node
+```
+
+## Commands for Full-Node
+
+```
+lunes-node
+Commands to management your Lunes Node
+
+USAGE:
+    lunes node
+    lunes node <SUBCOMMAND>
+
+OPTIONS:
+    -h, --help    Print help information
+
+SUBCOMMANDS:
+    config     Comming Soon
+    down       Shutdown your Lunes Node
+    help       Print this message or the help of the given subcommand(s)
+    install    Comming Soon
+    logs       Follow your Lunes Node logs
+    restart    Restart your your Lunes Node
+    status     Status of your Lunes Node
+    up         Turn On your Lunes Node
+    version    Comming Soon
 ```

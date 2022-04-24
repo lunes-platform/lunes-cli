@@ -51,17 +51,17 @@ pub fn status() {
 }
 
 pub fn version() {
-    println!("version: 1.1.1")
+    println!("Comming Soon")
 }
 
 pub fn config() {
-    println!("pass your config")
+    println!("Comming Soon")
 }
 
 pub fn install(version: Option<String>) {
     match version {
-        Some(v) => println!("Installing your lunes node version: {}", v),
-        None => println!("Installing your lunes node version: latest"),
+        Some(v) => println!("Comming Soon"),
+        None => println!("Comming Soon"),
     }
 }
 

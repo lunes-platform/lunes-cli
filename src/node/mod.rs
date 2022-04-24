@@ -11,11 +11,14 @@ pub struct Node {
 
 #[derive(Debug, Subcommand)]
 pub enum NodeCommands {
-    /// Install Lunes Node by version
+    // Install Lunes Node by version
+    /// Comming Soon
     Install(NodeInstall),
-    /// Version of your Lunes Node
+    // Version of your Lunes Node
+    /// Comming Soon
     Version,
-    /// Edit config of your Lunes Node
+    // Edit config of your Lunes Node
+    /// Comming Soon
     Config,
     /// Restart your your Lunes Node
     Restart,
