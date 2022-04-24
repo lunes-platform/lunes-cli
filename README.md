@@ -10,7 +10,7 @@
 
 ## Linux
 
-_Download the `lunes-linux` [here](https://github.com/lunes-platform/lunes-cli/releases)_
+_Download the `lunes cli` [here](https://github.com/lunes-platform/lunes-cli/releases)_
 
 *Move to /usr/bin/ and rename to `lunes`*
 ```
