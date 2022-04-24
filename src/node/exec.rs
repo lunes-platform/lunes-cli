@@ -3,7 +3,7 @@ use std::process::Command;
 pub fn up() {
     println!("Up Lunes Node");
 
-    match Command::new("systemclt")
+    match Command::new("systemctl")
         .arg("start")
         .arg("lunesnode.service")
         .status()
@@ -16,7 +16,7 @@ pub fn up() {
 pub fn down() {
     println!("Down lunes node");
 
-    match Command::new("systemclt")
+    match Command::new("systemctl")
         .arg("stop")
         .arg("lunesnode.service")
         .status()
@@ -40,7 +40,7 @@ pub fn logs() {
 }
 
 pub fn status() {
-    match Command::new("systemclt")
+    match Command::new("systemctl")
         .arg("status")
         .arg("lunesnode.service")
         .status()
@@ -68,7 +68,7 @@ pub fn install(version: Option<String>) {
 pub fn restart() {
     println!("Restart Lunes Node");
 
-    match Command::new("systemclt")
+    match Command::new("systemctl")
         .arg("restart")
         .arg("lunesnode.service")
         .status()
