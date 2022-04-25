@@ -35,9 +35,13 @@ pub enum NodeCommands {
 
 #[derive(Debug, Args, Clone)]
 pub struct NodeInstall {
+    /// Version of Lunes Node: e.g. 0.1.17 <latest default>
     #[clap(short, long)]
     pub version: Option<String>,
+    /// 1 for mainnet, 0 for testnet
     pub chain: u8,
+    /// Password for encrypted your seed
     pub password: String,
+    /// Your seed encoded in base 58
     pub seed_base58: String,
 }
