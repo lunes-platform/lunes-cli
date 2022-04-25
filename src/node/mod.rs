@@ -1,4 +1,5 @@
 pub mod exec;
+pub mod utils;
 use clap::{Args, Subcommand};
 
 /// Commands to management your Lunes Node
@@ -32,8 +33,11 @@ pub enum NodeCommands {
     Up,
 }
 
-#[derive(Debug, Args)]
+#[derive(Debug, Args, Clone)]
 pub struct NodeInstall {
     #[clap(short, long)]
     pub version: Option<String>,
+    pub chain: u8,
+    pub password: String,
+    pub seed_base58: String,
 }
