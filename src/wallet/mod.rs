@@ -1,4 +1,7 @@
+pub mod exec;
+
 use clap::{Args, Subcommand};
+
 /// Commands to management your Lunes Wallet
 #[derive(Debug, Args)]
 #[clap(args_conflicts_with_subcommands = true)]
@@ -11,7 +14,7 @@ pub struct Wallet {
 pub enum WalletCommands {
     /// Disabled
     Rename(WalletRename),
-    /// Disabled
+    /// Create new Wallet
     New(WalletNew),
     /// Disabled
     Add(WalletAdd),
@@ -23,8 +26,18 @@ pub enum WalletCommands {
 
 #[derive(Debug, Args)]
 pub struct WalletNew {
+    /// Name of wallet
+    #[clap(long)]
+    pub name: String,
+    /// 1 for mainnet, 0 for testnet
     #[clap(short, long)]
-    pub name: Option<String>,
+    pub chain: Option<u8>,
+    /// Nonce for create your seed
+    #[clap(short, long)]
+    pub nonce: Option<u32>,
+    /// Number of Words for create your seed
+    #[clap(short, long)]
+    pub words: Option<u8>
 }
 
 #[derive(Debug, Args)]

@@ -19,7 +19,7 @@ pub struct Cli {
 #[derive(Debug, Subcommand)]
 pub enum Commands {
     Node(Node),
-    // Wallet(Wallet),
+    Wallet(Wallet),
     #[clap(external_subcommand)]
     External(Vec<OsString>),
 }
