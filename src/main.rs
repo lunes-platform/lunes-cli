@@ -13,7 +13,7 @@ fn main() {
 
     match args.command {
         Commands::Node(subcommand) => match subcommand.command.unwrap_or(NodeCommands::Version) {
-            NodeCommands::Install(args) => install(args),
+            NodeCommands::Install(args) => install(args).await,
             NodeCommands::Version => version(),
             NodeCommands::Restart => restart(),
             NodeCommands::Config => config(),

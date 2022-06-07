@@ -10,3 +10,5 @@ license-file = "LICENSE"
 [dependencies]
 clap = { version = "3.1.12", features = ["derive"] }
 human-panic = "1.0.3"
+trauma = "2"
+tokio = "*"

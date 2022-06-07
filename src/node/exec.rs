@@ -1,9 +1,8 @@
 use crate::node::NodeInstall;
 use std::process::Command;
+use trauma::Error;
 
-use super::utils::{mount_hocon, mount_service};
-
-#[cfg(target_os = "linux")]
+// #[cfg(target_os = "linux")]
 pub fn up() {
     std::process::Command::new("clear").status().unwrap();
     println!("🛫 Up Lunes Node");
@@ -19,7 +18,7 @@ pub fn up() {
     println!("✅ Done!");
 }
 
-#[cfg(target_os = "linux")]
+// #[cfg(target_os = "linux")]
 pub fn down() {
     std::process::Command::new("clear").status().unwrap();
     println!("🛬 Down Lunes Node");
@@ -35,7 +34,7 @@ pub fn down() {
     println!("✅ Done!");
 }
 
-#[cfg(target_os = "linux")]
+// #[cfg(target_os = "linux")]
 pub fn logs() {
     std::process::Command::new("clear").status().unwrap();
     println!("📊 Logs Lunes Node");
@@ -51,7 +50,7 @@ pub fn logs() {
     println!("✅ Done!");
 }
 
-#[cfg(target_os = "linux")]
+// #[cfg(target_os = "linux")]
 pub fn status() {
     std::process::Command::new("clear").status().unwrap();
     println!("🌡  Status Lunes Node");
@@ -67,10 +66,10 @@ pub fn status() {
     println!("✅ Done!");
 }
 
-#[cfg(target_os = "linux")]
+// #[cfg(target_os = "linux")]
 pub fn restart() {
-        std::process::Command::new("clear").status().unwrap();std::process::Command::
-    new("clear").status().unwrap();
+    std::process::Command::new("clear").status().unwrap();
+    std::process::Command::new("clear").status().unwrap();
     println!("✈️  Restart Lunes Node");
 
     match Command::new("systemctl")
@@ -92,52 +91,51 @@ pub fn config() {
     println!("Comming Soon")
 }
 
-#[cfg(target_os = "linux")]
-pub fn install(args: NodeInstall) {
-    std::fs::create_dir("/opt/lunesnode/");
+async fn downloading(version: String) -> Result<(), Error> {
+    use std::path::PathBuf;
+    use trauma::{download::Download, downloader::DownloaderBuilder};
+
+    let url = format!(
+        "https://github.com/lunes-platform/lunes-node/releases/download/{}/lunesnode-{}.jar",
+        version, version
+    );
+    let downloads = vec![Download::try_from(url.as_str()).unwrap()];
+    let downloader = DownloaderBuilder::new()
+        .directory(PathBuf::from("."))
+        .build();
+    downloader.download(&downloads).await;
+    Ok(())
+}
+
+fn move_files_to_opt(args: NodeInstall) {
+    use super::utils::{mount_hocon, mount_service};
+    use std::fs;
+
     mount_hocon(args.clone());
     mount_service();
 
+    fs::create_dir_all("/opt/lunesnode").expect("failed in create dir /opt/lunesnode");
+    fs::copy("lunesnode-0.0.8.jar", "/opt/lunesnode/lunesnode-0.0.8.jar")
+        .expect("failed in move .jar");
+    fs::remove_file("lunesnode-0.0.8.jar").expect("failed in remove tmp .jar");
+}
+
+// #[cfg(target_os = "linux")]
+pub async fn install(args: NodeInstall) {
     match args.version {
-        Some(v) => match v.as_str() {
-            "0.0.7" => {
-                std::process::Command::new("clear").status().unwrap();
-                println!("⬇️  Downloading Lunes Node ...");
-                Command::new("wget")
-                .args(["-O", "/opt/lunesnode/lunesnode.jar"])
-                .arg("https://github.com/lunes-platform/lunes-node/releases/download/0.0.7/lunesnode.jar")
-                .output();
-                println!("✅ Done!");
-                println!("🚀 Running `lunes node up` to start");
-            },
-            "0.1.0" => {
-                std::process::Command::new("clear").status().unwrap();
-                println!("⬇️  Downloading Lunes Node ...");
-                Command::new("wget")
-                .args(["-O", "/opt/lunesnode/lunesnode.jar"])
-                .arg("https://github.com/lunes-platform/lunes-node/releases/download/0.1.0/lunesnode.jar")
-                .output();
-                println!("✅ Done!");
-                println!("🚀 Running `lunes node up` to start");
-            },
-            _ => {
-                std::process::Command::new("clear").status().unwrap();
-                println!("⬇️  Downloading Lunes Node ...");
-                Command::new("wget")
-                .args(["-O", "/opt/lunesnode/lunesnode.jar"])
-                .arg("https://github.com/lunes-platform/lunes-node/releases/download/0.1.0/lunesnode.jar")
-                .output();
-                println!("✅ Done!");
-                println!("🚀 Running `lunes node up` to start");
-            }
-        },
+        Some(ref v) => {
+            std::process::Command::new("clear").status().unwrap();
+            println!("⬇️  Downloading Lunes Node {}", v);
+            downloading(v.to_string()).await;
+            move_files_to_opt(args.clone());
+            println!("✅ Done!");
+            println!("🚀 Running `lunes node up` to start");
+        }
         None => {
             std::process::Command::new("clear").status().unwrap();
-            println!("⬇️  Downloading Lunes Node ...");
-            Command::new("wget")
-            .args(["-O", "/opt/lunesnode/lunesnode.jar"])
-            .arg("https://github.com/lunes-platform/full-node/releases/download/0.1.0/lunesnode.jar")
-            .output();
+            println!("⬇️  Downloading Lunes Node 0.0.8");
+            downloading(String::from("0.0.8")).await.expect("");
+            move_files_to_opt(args.clone());
             println!("✅ Done!");
             println!("🚀 Running `lunes node up` to start");
         }

@@ -1,7 +1,7 @@
 use crate::node::NodeInstall;
 
 pub fn mount_hocon(args: NodeInstall) {
-    let (chain, master) = match args.chain {
+    let (chain, full_node) = match args.chain {
         1 => ("MAINNET", "5.196.155.34:7770"),
         _ => ("TESTNET", "5.196.155.46:7770"),
     };
@@ -16,9 +16,10 @@ pub fn mount_hocon(args: NodeInstall) {
     wallet.password = "{}"
     wallet.seed = "{}"
 }}"#,
-            chain, master, args.password, args.seed_base58
+            chain, full_node, args.password, args.seed_base58
         ),
-    );
+    )
+    .expect("failed in create config file for lunesnode");
 }
 
 pub fn mount_service() {
@@ -40,5 +41,6 @@ SyslogIdentifier = lunesnode
 [Install]
 WantedBy = multi-user.target
 "#,
-    );
+    )
+    .expect("failed in create service file");
 }

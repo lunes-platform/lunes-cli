@@ -5,7 +5,6 @@
 
 1. Create and describe your **proposal/bug** in an _issue_.
 2. Create a new **branch** and **merge request** with the pattern `1-my-feature`.
-3. Commit your code to the commit convention.
 
 ---
 
@@ -24,7 +23,7 @@ why was it modified?
 
 - **fix** Fix a bug
 - **add** Add a new feature
-- **remove** Remove a peace of code
+- **remove** Remove a peace of codse
 - **update** Update any thing. e.g. feature, piece, refact
 
 ## Semantic Version
