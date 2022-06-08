@@ -2,7 +2,7 @@ pub mod exec;
 pub mod utils;
 use clap::{Args, Subcommand};
 
-/// Commands to management your Lunes Node
+/// 🌎 Management your Lunes Node
 #[derive(Debug, Args)]
 #[clap(args_conflicts_with_subcommands = true)]
 pub struct Node {
@@ -12,8 +12,7 @@ pub struct Node {
 
 #[derive(Debug, Subcommand)]
 pub enum NodeCommands {
-    // Install Lunes Node by version
-    /// Comming Soon
+    /// ⬇ Install Lunes Node by version
     Install(NodeInstall),
     // Version of your Lunes Node
     /// Comming Soon
@@ -21,15 +20,15 @@ pub enum NodeCommands {
     // Edit config of your Lunes Node
     /// Comming Soon
     Config,
-    /// Restart your your Lunes Node
+    /// 🔄 Restart your your Lunes Node
     Restart,
-    /// Status of your Lunes Node
+    /// 🌡 Status of your Lunes Node
     Status,
-    /// Shutdown your Lunes Node
+    /// 🚨 Shutdown your Lunes Node
     Down,
-    /// Follow your Lunes Node logs
+    /// 📊 Follow your Lunes Node logs
     Logs,
-    /// Turn On your Lunes Node
+    /// 🚀 Turn On your Lunes Node
     Up,
 }
 

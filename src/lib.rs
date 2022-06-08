@@ -10,7 +10,7 @@ use wallet::Wallet;
 #[derive(Parser, Debug)]
 #[clap(name = "lunes")]
 #[clap(bin_name = "lunes")]
-#[clap(about = "Lunes CLI management for full-node and wallet", long_about = None)]
+#[clap(about = "🕹 Lunes CLI management for full-node and wallet", long_about = None)]
 pub struct Cli {
     #[clap(subcommand)]
     pub command: Commands,

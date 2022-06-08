@@ -5,7 +5,7 @@ use trauma::Error;
 // #[cfg(target_os = "linux")]
 pub fn up() {
     std::process::Command::new("clear").status().unwrap();
-    println!("🛫 Up Lunes Node");
+    println!("🚀 Up Lunes Node");
 
     match Command::new("systemctl")
         .arg("start")
@@ -21,7 +21,7 @@ pub fn up() {
 // #[cfg(target_os = "linux")]
 pub fn down() {
     std::process::Command::new("clear").status().unwrap();
-    println!("🛬 Down Lunes Node");
+    println!("🚨 Down Lunes Node");
 
     match Command::new("systemctl")
         .arg("stop")
@@ -70,7 +70,7 @@ pub fn status() {
 pub fn restart() {
     std::process::Command::new("clear").status().unwrap();
     std::process::Command::new("clear").status().unwrap();
-    println!("✈️  Restart Lunes Node");
+    println!("🔄 Restart Lunes Node");
 
     match Command::new("systemctl")
         .arg("restart")
@@ -125,7 +125,7 @@ pub async fn install(args: NodeInstall) {
     match args.version {
         Some(ref v) => {
             std::process::Command::new("clear").status().unwrap();
-            println!("⬇️  Downloading Lunes Node {}", v);
+            println!("⬇️ Downloading Lunes Node {}", v);
             downloading(v.to_string()).await;
             move_files_to_opt(args.clone());
             println!("✅ Done!");

@@ -2,7 +2,7 @@ pub mod exec;
 
 use clap::{Args, Subcommand};
 
-/// Commands to management your Lunes Wallet
+/// 🔑 Management your Lunes Wallet
 #[derive(Debug, Args)]
 #[clap(args_conflicts_with_subcommands = true)]
 pub struct Wallet {
@@ -14,7 +14,7 @@ pub struct Wallet {
 pub enum WalletCommands {
     /// Disabled
     Rename(WalletRename),
-    /// Create new Wallet
+    /// 🎉 Create new Wallet
     New(WalletNew),
     /// Disabled
     Add(WalletAdd),
