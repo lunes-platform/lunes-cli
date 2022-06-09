@@ -8,7 +8,7 @@
 
 ## Install by Rust
 
-**needs [Rust]()**
+- **needs [Rust](https://www.rust-lang.org/pt-BR/learn/get-started)**
 ```
 cargo install lunes
 ```
@@ -17,9 +17,9 @@ cargo install lunes
 
 _Download the `lunes cli` [here](https://github.com/lunes-platform/lunes-cli/releases)_
 
-*Move to /usr/bin/ and rename to `lunes`*
+*Move to `/usr/bin/` and rename to `lunes`*
 ```
-mv lunes-*** /usr/bin/lunes
+mv lunes-* /usr/bin/lunes
 ```
 
 _Allow its execution_
